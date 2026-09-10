@@ -1,0 +1,10 @@
+# npm kurulum hedefleri (gitnexus + caveman buraya kurulur, Makefile üretir)
+npm-cache/
+npm-global/
+
+# rtk derleme/indirme çıktıları (Makefile üretir)
+rtk/dist/
+rtk/target/
+
+# eski/manuel derlenmiş binary kopyası
+bin/
