@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "deny": [
+      "Read(**/.env)",
+      "Read(**/.env.local)",
+      "Read(**/.env.development)",
+      "Read(**/.env.development.local)",
+      "Read(**/.env.production)",
+      "Read(**/.env.production.local)",
+      "Read(**/.env.test)",
+      "Read(**/.env.test.local)",
+      "Read(**/.env.staging)",
+      "Read(**/.envrc)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)",
+      "Read(**/*.p12)",
+      "Read(**/id_rsa*)",
+      "Read(**/id_ed25519*)",
+      "Read(**/.npmrc)",
+      "Read(**/.git-credentials)",
+      "Read(**/secrets.json)",
+      "Read(**/credentials)",
+      "Read(**/secrets/**)",
+      "Read(**/playwright/.auth/**)",
+      "Bash(cat:*secrets/*)",
+      "Bash(head:*secrets/*)",
+      "Bash(tail:*secrets/*)",
+      "Bash(less:*secrets/*)",
+      "Bash(more:*secrets/*)",
+      "Bash(strings:*secrets/*)",
+      "Bash(xxd:*secrets/*)",
+      "Bash(od:*secrets/*)",
+      "Bash(cat:*.env*)",
+      "Bash(head:*.env*)",
+      "Bash(tail:*.env*)",
+      "Bash(less:*.env*)",
+      "Bash(more:*.env*)",
+      "Bash(source:*.env*)",
+      "Bash(strings:*.env*)",
+      "Bash(xxd:*.env*)",
+      "Bash(od:*.env*)",
+      "Bash(env)",
+      "Bash(printenv:*)",
+      "Bash(git push --force:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(git clean -fdx:*)"
+    ],
+    "ask": [
+      "Bash(gitnexus setup:*)",
+      "Bash(caveman setup:*)",
+      "Bash(make scan:*)",
+      "Bash(make all:*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Read|Edit|Write|Glob|Grep|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/block-secrets.py\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/remind-progress.py\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

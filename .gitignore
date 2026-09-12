@@ -1,3 +1,6 @@
+# Mekanik oturum snapshot'ları (hikaye PROGRESS.md'de)
+.claude/handoffs/
+
 # npm kurulum hedefleri (gitnexus + caveman buraya kurulur, Makefile üretir)
 npm-cache/
 npm-global/

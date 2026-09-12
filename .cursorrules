@@ -1,0 +1,24 @@
+# Cursor kuralları — agent-tools
+
+Claude Code ile **aynı hikaye dosyası** kullanılır. Tam metin: `CLAUDE.md`.
+Yönlendirme: `AGENTS.md`.
+
+## Her oturum
+
+1. `PROGRESS.md` oku; oradan devam et.
+2. Kapanışta veya kullanıcı “kaydet / devret / /progress” deyince güncelle.
+3. Commit yok (açık istek olmadan).
+
+## Araçlar
+
+- Makefile: `make -f "$AGENT_TOOLS/Makefile"` veya `amake`.
+- Grafik: GitNexus MCP. Bu repoda `gitnexus analyze . --index-only`
+  (`make scan` CLAUDE.md ezer).
+- Terminal: mümkünse `rtk read` / `rtk ls` (Cursor’da rtk hook’u yok).
+- `gitnexus setup` / `caveman setup --install` onaysız yok.
+
+## Yapma
+
+- Sır dosyası oku/yaz/listele (şablon `*.example` hariç).
+- Vendor kaynak kodu ve `npm-cache/` / `npm-global/` / `rtk/dist/` edit.
+- `git add -A` kökten.

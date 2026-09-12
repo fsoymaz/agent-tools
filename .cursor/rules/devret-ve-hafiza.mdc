@@ -1,0 +1,13 @@
+---
+description: Canlı hikaye PROGRESS.md; agent-tools ortak kullanım
+alwaysApply: true
+---
+
+# Devir ve araçlar
+
+- Oturum başı: `PROGRESS.md` oku. Oturum sonu veya kaydet/devret: güncelle.
+- Şablon başlıkları: Tamamlanan, Yarım kalan, Sıradaki, Tuzaklar.
+- Araç kutusu: `AGENTS.md`. Sert kurallar: `CLAUDE.md`.
+- GitNexus MCP ile gez; `make scan` onaysız çalışma.
+- Cursor’da rtk otomatik değil — `rtk read` kullan.
+- Sır yollarına dokunma. Commit kullanıcı isteyene kadar yok.

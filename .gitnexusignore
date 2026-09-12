@@ -1,0 +1,14 @@
+# GitNexus indeksleme dışı bırakılanlar.
+#
+# CLAUDE.md 3. bölüm: GitNexus/, rtk/ ve Agent-Context-Bootstrap-v1/ upstream
+# klonlarıdır, bu repo adına kaynak kodu değiştirilmez. Grafiğe girerlerse
+# impact/trace sorguları hiç dokunmayacağımız kodla dolar (tek başına
+# GitNexus/ 251M).
+#
+# npm-cache/, npm-global/, bin/ zaten Makefile üretimi (bkz. 2. bölüm).
+GitNexus/
+rtk/
+Agent-Context-Bootstrap-v1/
+npm-cache/
+npm-global/
+bin/

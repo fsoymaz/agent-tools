@@ -39,3 +39,30 @@ netleşmemiş iki karar:
 
 Bu ikisi netleşince, `test-writer.md`'deki tier kuralları ve CI entegrasyon
 detayları buna göre güncellenmeli.
+
+---
+
+## Durum: devreye alındı (2026-09-12)
+
+Bu taslaklar `~/Desktop/bimasraf-e2e/.claude/agents/` altına **uyarlanarak**
+taşındı. Kopya değil — gerçek mimariye göre yeniden yazıldı:
+
+| Buradaki taslak | Oradaki karşılığı | Başlıca fark |
+|---|---|---|
+| `test-writer.md` | `test-yazar.md` | Gherkin-önce sıra; `data-testid` yerine `formcontrolname` |
+| `flaky-triage.md` | `flaky-dedektif.md` | Yaşanmış üç SPA tuzağı eklendi |
+| `test-reviewer.md` | `test-gozden-gecirici.md` | Katman disiplini + gezinme bloğu + sır güvenliği kontrolleri |
+
+**Kurallar oradan yönetilir, buradan değil.** Claude Code ajan ve kural
+dosyalarını çalıştığı proje dizininden yükler; `bimasraf-e2e` içinde
+çalışırken bu klasör devrede değildir. Buradaki dosyalar artık tarihsel
+taslaktır — değiştirilmesi otomasyon repo'sunu etkilemez.
+
+`test-writer.md`'deki "`data-testid` kullan" kuralı bu uygulama için
+**yanlış çıktı**: panel Angular + PrimeNG ve `data-testid` taşımıyor.
+Doğrusu `formcontrolname`. Başka bir repoya kopyalamadan önce o kuralı
+hedef uygulamaya göre doğrula.
+
+Ayrıca README'nin "henüz karara bağlanmamış" iki konusundan biri kapandı:
+test seçimi **etiket tabanlı** (`@smoke` / `@regresyon` / `@kritik`).
+Repo-arası gate mimarisi hâlâ açık.
